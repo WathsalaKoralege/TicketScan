@@ -1,1 +1,1 @@
-web: python -m gspread -m smtplib CloudScan.py
+web: python -m gspread CloudScan.py
