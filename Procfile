@@ -1,1 +1,1 @@
-web: python -m gspread CloudScan.py
+web: pip3 install -r requirements.txt && python3 CloudScan.py
