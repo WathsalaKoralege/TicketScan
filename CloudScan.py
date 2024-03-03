@@ -8,7 +8,7 @@ import os
 
 # Define the scope and credentials to access the Google Sheets API
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('/credentials1.json', scope)  # Replace 'credentials.json' with your credentials file
+credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials1.json', scope)  # Replace 'credentials.json' with your credentials file
 
 # Authorize the credentials and open the Google Sheet
 gc = gspread.authorize(credentials)
@@ -21,7 +21,7 @@ tomorrow = datetime.date.today() + datetime.timedelta(days=1)
 row_index = None
 dates = worksheet.col_values(2)
 for index, date in enumerate(dates):
-    if date == tomorrow.strftime('%-m/%d/%Y'):  # Adjusted date format for comparison
+    if date == tomorrow.strftime('%-m/%-d/%Y'):  # Adjusted date format for comparison
         row_index = index + 1  # Adding 1 because index starts from 0, but row numbering starts from 1
         break
 
