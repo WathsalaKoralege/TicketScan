@@ -12,7 +12,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name('/credentials1.js
 
 # Authorize the credentials and open the Google Sheet
 gc = gspread.authorize(credentials)
-worksheet = gc.open('test').sheet1  # Replace with your Google Sheet name
+worksheet = gc.open('Castor Issues Scan Rotation').sheet1  # Replace with your Google Sheet name
 
 # Get tomorrow's date (the day before the ticket scan day)
 tomorrow = datetime.date.today() + datetime.timedelta(days=1)
